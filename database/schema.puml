@@ -1,0 +1,32 @@
+@startuml
+
+entity Building {
+    index: bigint <<generated>>
+    building: text
+    dist: text
+    addr_road: text
+    bunji: text
+    year_build: number
+}
+
+entity District {
+    index: bigint <<generated>>
+    dist_origin: text
+    dist_join: text
+    sub_dist1: text
+    sub_dist2: text
+    sub_dist3: text
+    sub_dist4: text
+}
+
+entity Area {
+    index: bigint <<generated>>
+    dist_origin: text
+    dist_join: text
+    area: double
+}
+
+Building }o--|| District
+Area }o--|| Building
+
+@enduml
